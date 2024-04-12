@@ -2,7 +2,7 @@
   <head>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
-
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   </head>
   <body>
     <a-scene>
@@ -13,12 +13,16 @@
        geometry="primitive:plane; width:4; height:4;side:double"
        position= "0 3 -7.419"
        material="color:#5465ff"
+       event-set__enter="_event: mouseenter; color: #8FF7FF"
+       event-set__leave="_event: mouseleave; color: #4CC3D9"
        text="value:Thank you for taking the time to come talk with us about your business and what it does! It was interesting to learn about how many people are involved in your projects, as well as the different industries you work in. There’s a lot of positive change being brought about due to your VR training! - Mariana Espinal; color:white; width:3"></a-entity>
         
        <a-entity
        geometry="primitive:plane; width:4; height:4;side:double"
        position="-4.037 3 -8.003"
        material="color:#4343fa"
+       event-set__enter="_event: mouseenter; color: #8FF7FF"
+       event-set__leave="_event: mouseleave; color: #4CC3D9"
        text="value:Mac, thank you so much for taking the time to share about Sketchbox and venture capital. It was interesting to learn about your platform’s core pillars, as well as the many verticals your company operates in. It’s impressive for a 40-person team. I wish you all the best in your endeavors. –Max Stromfeld; color:white; width:3">
        </a-entity>
 
@@ -27,6 +31,8 @@
        position="-0.935 3 5.389"
        rotation="0 180 0"
        material="color:#7371fc"
+       event-set__enter="_event: mouseenter; color: #8FF7FF"
+       event-set__leave="_event: mouseleave; color: #4CC3D9"
        text="value:Thanks for presenting to us Mac, I appreciate you going through all the different aspects of your job and all the industries you help in developing.- Sam R; color:white; width:3">
        </a-entity>
 
@@ -111,5 +117,12 @@
 
     </a-scene>
   </body>
-
+  <script>
+    const music = new Howl({
+      src:['music.wav'],
+      loop:true,
+      volume:0.5,
+      autoplay:true
+    });
+  </script>
 </html>
